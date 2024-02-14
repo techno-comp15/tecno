@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <title>Technocomp</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        /* Add your styles for the home page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      
+        nav li {
+            display: inline;
+            margin-right: 20px;
+            color: #42e95e;
+        }
+        header {
+            background-color: #17ebe0;
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between; /* Align items horizontally */
+            align-items: center; /* Center items vertically */
+            margin: 0%;
+            
+        }
+        header img {
+            max-height: 170px; 
+            }
+        .home { 
+            background-color: #010707;
+            color: rgb(1, 43, 105);
+            padding: 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin-right: 100%;
+            color: white ; /* Remove default margin */
+
+        }
+      
+        main {
+            padding: 20px;
+        }
+        .category {
+            margin-bottom: 30px;
+           
+        }
+        .category h2 {
+            border-bottom: 2px solid #42e95e;
+            padding-bottom: 5px;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: block; /* Display list items horizontally */
+            margin-right: 20px; /* Adjust the right margin between list items */
+        }
+   
+        #searchBar {
+            margin-bottom: 20px;
+            margin-left: 89%;
+        }
+
+      footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Optional: Style the text links in the footer */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="The Logo">
+        <h1>
+           
+        </h1>
+    </header>
+    <div class="home">
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Raipair.html">Repair</a></li>
+                <li><a href="Excel.html">Exel</a></li>
+                <li><a href="Word.html">Word</a></li>
+                <li><a href="News.html">News</a></li>
+               
+            </ul>
+        </nav>
+    
+    </div>
+    <main>
+        <div id="searchBar">
+            <input type="text" id="searchInput" placeholder="Search..." oninput="search()">
+        </div>
+
+        <!-- Latest content in each category -->
+        <div class="category" id="category1">
+            <h2>Raipair</h2>
+            <ul>
+                <li><a href="">How to Repair MacBook</a></li>
+                <li><a href="">Excel</a></li>
+            </ul>
+        </div>
+        <div class="category" id="category2">
+            <h2>Excel</h2>
+            <ul>
+                <li><a href="#">Latest Item 1</a></li>
+                <li><a href="#">Latest Item 2</a></li>
+                <li><a href="#">Latest Item 3</a></li>
+            </ul>
+        </div>
+        <div class="category" id="category2">
+            <h2>Word</h2>
+            <ul>
+                <li><a href="#">Latest Item 1</a></li>
+                <li><a href="#">Latest Item 2</a></li>
+                <li><a href="#">Latest Item 3</a></li>
+            </ul>
+        </div>
+        <div class="category" id="category2">
+            <h2>News</h2>
+            <ul>
+                <li><a href="#">Latest Item 1</a></li>
+                <li><a href="#">Latest Item 2</a></li>
+                <li><a href="#">Latest Item 3</a></li>
+            </ul>
+        </div>
+        <!-- Add more categories as needed -->
+    </main>
+
+    <script>
+        function search() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+
+            // Loop through each category and filter items based on the search input
+            const categories = document.querySelectorAll('.category');
+            categories.forEach(category => {
+                const items = category.querySelectorAll('li');
+                items.forEach(item => {
+                    const textContent = item.textContent.toLowerCase();
+                    if (textContent.includes(input)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 TechnoComp Devloper. All rights reserved.</p>
+        </div>
+        <a href="about us">about</a>
+    </footer>
+</body>
+</html>
